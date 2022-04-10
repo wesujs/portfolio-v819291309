@@ -7,16 +7,26 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
+const localLocation = "http://localhost:3000"
+
+const virtualLocation = "https://floating-waters-68800.herokuapp.com"
+
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    res.render('home')
+    res.render('home', {localLocation: localLocation, virtualLocation: virtualLocation});
 });
 
+app.get("/thanks", function(req, res){
+  res.render('thanks', {localLocation: localLocation, virtualLocation: virtualLocation,});
+});
+
+
 app.listen(process.env.PORT || 3000, function () {
-    console.log("Server started on port 3000.");
+    console.log("We are up and running on 3000.");
 });
 

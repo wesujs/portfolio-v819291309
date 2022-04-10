@@ -256,23 +256,26 @@
                 <div class="contact-form">
                     <h2 class="mb-4">Thoughts of collaboration? Let's go!</h2>
 
-                    <form action="" method="get">
+                    <form action="https://formsubmit.co/wescashnet@gmail.com" method="post">
                         <div class="row">
                             <div class="col-lg-6 col-12">
-                                <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required>
                             </div>
 
                             <div class="col-lg-6 col-12">
-                                <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                                <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
                             </div>
 
                             <div class="col-12">
                                 <textarea name="message" rows="6" class="form-control" id="message"
                                     placeholder="Message"></textarea>
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_next" value="<%= virtualLocation + "/thanks" %>">
+                                    <input type="hidden" name="_subject" value="Work Inquiry!">
                             </div>
 
                             <div class="ml-lg-auto col-lg-5 col-12">
-                                <input type="submit" class="form-control submit-btn" value="Send Button">
+                                <input type="submit" class="form-control submit-btn" value="Send Now!">
                             </div>
                         </div>
                     </form>
